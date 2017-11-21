@@ -41,7 +41,7 @@
 #include "DepthImage.hpp"
 
 DepthImage::DepthImage() {
-  collisionStatus = false;  
+  collisionStatus = false;
 }
 
 DepthImage::~DepthImage() {
@@ -49,9 +49,8 @@ DepthImage::~DepthImage() {
 
 void DepthImage::callDepth(const sensor_msgs::LaserScan::ConstPtr& msg) {
   for (int i = 0; i < msg->ranges.size(); i++) {
-    //std::cout<<"\nde: "<<msg->ranges[i];
     if (msg->ranges[i] < 0.8) {
-      collisionStatus = true; // true indicates presence of obstacle 
+      collisionStatus = true;  // true indicates presence of obstacle
       return;
     }
   }

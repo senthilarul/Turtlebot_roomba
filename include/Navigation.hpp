@@ -49,13 +49,14 @@
  * class to publish velocity
  */
 class Navigation {
-  private:
+ private:
     ros::NodeHandle nh;
     geometry_msgs::Twist msg;
     ros::Publisher velocity;
     ros::Subscriber depthBuffer;
     DepthImage depth;
-  public:
+
+ public:
    /**
     * @brief constructor Navigation class
     * @param none

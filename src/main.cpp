@@ -37,9 +37,9 @@
  * @brief main function to implement the turtlebot_roomba packages 
  */
 
+#include <ros/ros.h>
 #include "DepthImage.hpp"
 #include "Navigation.hpp"
-#include <ros/ros.h>
 
 /**
  * @brief    main function
@@ -49,7 +49,6 @@
  */
 
 int main(int argc, char* argv[]) {
-
   // initializes ROS node
   ros::init(argc, argv, "roomba");
   // declare object of class Navigation

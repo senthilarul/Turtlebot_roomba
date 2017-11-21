@@ -41,10 +41,10 @@
 #include "Navigation.hpp"
 
 Navigation::Navigation() {
-
-  velocity = nh.advertise <geometry_msgs::Twist> ("/mobile_base/commands/velocity",
-    1000);
-  depthBuffer = nh.subscribe <sensor_msgs::LaserScan> ("/scan", 50, &DepthImage::callDepth, &depth);
+  velocity = nh.advertise <geometry_msgs::Twist>
+ ("/mobile_base/commands/velocity", 1000);
+  depthBuffer = nh.subscribe <sensor_msgs::LaserScan>
+ ("/scan", 50, &DepthImage::callDepth, &depth);
 
   msg.linear.x = 0.0;
   msg.linear.y = 0.0;
@@ -74,7 +74,7 @@ void Navigation::move() {
     // std::cout<<depth.collisionCheck()<<"\n";
     // check for obstacle
     if (depth.collisionCheck()) {
-      // stop linear motion and rotate turtlebot to avoid collision 
+      // stop linear motion and rotate turtlebot to avoid collision
       msg.linear.x = 0.0;
       msg.angular.z = 1.0;
     } else {
