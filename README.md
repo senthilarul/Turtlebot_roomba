@@ -43,6 +43,24 @@ roslaunch turtlebot_roomba roomba.launch
 
 to close the demo press ctrl + C in the open terminal windows.
 
+to run without using the roomba launch file
+
+open a new terminal and type
+```
+roscore
+```
+open a new terminal and launch gazebo turtlebot world 
+```
+roslaunch turtlebot_gazebo turtlebot_world.launch
+```
+open a new terminal and type
+```
+cd ~/catkin_ws
+source devel/setup.bash
+rosrun turtlebot_roomba roomba
+```
+to close the program press ctrl+C in all the three terminals.
+
 ## ROSbag
 
 A .bag file containing 30 seconds of recording of all topics (except camera related) is available in the results directory.
