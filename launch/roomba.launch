@@ -1,16 +1,24 @@
 <launch>
 
-    <include file="$(find turtlebot_gazebo)/launch/turtlebot_world.launch">
-      
-</include>
+    <include file="$(find turtlebot_gazebo)/launch/turtlebot_world.launch"></include>
+    <arg name = "rosbagEnable" default= "false" />
 
     <node
         pkg="turtlebot_roomba"
         name="roomba"
         type="roomba"
         output="screen"
-        launch-prefix="gnome-terminal --command"
+    />
+    <node
+        pkg="rosbag"
+        name="record"
+        type="record"
+        args="-a -x /camera/(.*) -O $(find turtlebot_roomba)/results/roombatopics.bag"
+        if="$(arg rosbagEnable)"
     />
 
-
 </launch>
+
+
+
+
