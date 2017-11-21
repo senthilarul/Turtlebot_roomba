@@ -64,19 +64,29 @@ to close the program press ctrl+C in all the three terminals.
 ## ROSbag
 
 A .bag file containing 30 seconds of recording of all topics (except camera related) is available in the results directory.
-
+By default the rosbag recording is disabled.
 to enable record during roslaunch follow the instructions below
 ```
 cd ~/catkin_ws
 source devel/setup.bash
 roslaunch turtlebot_roomba roomba.launch rosbagEnable:=true
 ```
-Note: this will replace the previous .bag file in the results directory.
+The new bag file will be named roombatopics.bag
 
 to inspect the .bag file follow the instructions below (you can see except camera topics 
 other topics are recorded)
 ```
-cd ~/catkin_ws/src/turtlebot_roomba/results
-rosbag info roombatopics.bag
+cd ~/catkin_ws/src/Turtlebot_roomba/results
+rosbag info roombatopicsdefault.bag
 ```
 
+playing the bag file
+open a new terminal and type
+```
+roscore
+```
+open another terminal and type
+```
+cd ~/catkin_ws/src/Turtlebot_roomba/results
+rosbag play roombatopicsdefault.bag
+```
