@@ -1,3 +1,5 @@
+#pragma once
+
 #include <ros/ros.h>
 #include <iostream>
 #include "geometry_msgs/Twist.h"
@@ -6,10 +8,10 @@
 
 class Navigation {
   private:
-    ros::NodeHandle n;
+    ros::NodeHandle nh;
     geometry_msgs::Twist msg;
     ros::Publisher velocity;
-    ros::Subscriber sub;
+    ros::Subscriber depthBuffer;
     DepthImage depth;
   public:
     Navigation();
