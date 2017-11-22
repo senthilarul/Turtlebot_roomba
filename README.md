@@ -90,3 +90,4 @@ open another terminal and type
 cd ~/catkin_ws/src/Turtlebot_roomba/results
 rosbag play roombatopicsdefault.bag
 ```
+Note: for rosbag playback Gazebo should not be running.
